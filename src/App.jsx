@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
 
     console.log(`request made to get current user`);
-    axios.get('/api/v1/user/currentUser',  {
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/currentUser`,  {
       withCredentials: true
     })
       .then((res)=>{

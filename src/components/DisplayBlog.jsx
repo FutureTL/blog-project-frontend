@@ -18,7 +18,7 @@ const DisplayBlog = () => {
 
         useEffect(() => {
         
-            axios.get(`/api/v1/user/${author}/${title}/${id}`)
+            axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/${author}/${title}/${id}`)
             .then((response)=>{
                 if(response){
                     console.log(`Displayblog:: blog to be displayed to user ${response.data.data.blog}`)

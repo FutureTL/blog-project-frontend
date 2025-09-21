@@ -36,7 +36,7 @@ const Signup = () => {
           formData.append("description", data.description)
           formData.append("avatar", data.avatar[0])
 
-          axios.post('/api/v1/user/register', 
+          axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/register`, 
 
                 formData,
                 {
@@ -63,7 +63,7 @@ const Signup = () => {
                 
                     //we will login the user- which is also post type i.e, the backend will expect- email/username and password data from the frontend, 
                     //because in my backend logic that is what I am expecting.
-                    axios.post('/api/v1/user/login',
+                    axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/login`,
                         {
                             // email: response.data.data.email,
                             // password: response.data.data.password,

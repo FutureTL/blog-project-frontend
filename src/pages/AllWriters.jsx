@@ -12,7 +12,7 @@ const AllWriters = () => {
     useEffect(() => {
       
         //as soon as the page loads we have to do this.
-        axios.get(`http://localhost:3000/api/v1/user/our-writers`)
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/our-writers`)
         .then((response)=>{
             if(response){
                 console.log(`pages::AllWriters :: details of all writers :: ${response.data.data}`);

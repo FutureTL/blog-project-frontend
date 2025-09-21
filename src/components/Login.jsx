@@ -21,7 +21,7 @@ const Login = () => {
     const loginUser = (data)=>{
 
         setError("");
-        axios.post('/api/v1/user/login',
+        axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/login`,
 
             {
                 email: data.email,

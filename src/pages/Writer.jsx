@@ -17,7 +17,7 @@ const Writer = () => {
 
     useEffect(() => {
       
-        axios.get(`/api/v1/user/our-writers/${username}`)
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/our-writers/${username}`)
             .then((response)=>{
                 if(response){
                     console.log(`Writer:: individual writer details :: ${response.data.data}`);

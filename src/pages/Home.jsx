@@ -23,7 +23,7 @@ const Home = () => {
 
     useEffect(() => {
       //load all the posts:
-      axios.get('/api/v1/user/personal-blogs')
+      axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/personal-blogs`)
         .then((response)=>{
             if(response){
                 console.log(`the respnse for personal blogs: `, response.data.data);

@@ -19,7 +19,7 @@ const PostForm = ({username}) => {
 
     const submitPost = (data) => {
         //user has created a post, and have to save it to database of the user
-        axios.post(`/api/v1/user/${username}/new-blog`,{
+        axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/${username}/new-blog`,{
             
             title:data.title,
             content: data.content,
