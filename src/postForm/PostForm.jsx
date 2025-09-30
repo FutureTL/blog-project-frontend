@@ -13,7 +13,7 @@ const PostForm = ({username}) => {
 
        defaultValues: {
             title : "",
-            content : ""
+            content : "",
        }
     })
 
@@ -26,7 +26,7 @@ const PostForm = ({username}) => {
         }
         ).then((response) => {
             if(response){
-                console.log(`PostForm:: post is published response :: `, response)
+                console.log(`PostForm:: post is published response :: `, response.data.data)
                 //if published, then redirect to home page
                 navigate('/');
             }})

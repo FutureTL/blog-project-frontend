@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import DOMPurify from "dompurify";
 
 //thought process- here complete blog has to be displayed to the user.
 //we should use state for title, content, and author, so when we get them from database
@@ -8,6 +9,11 @@ import { useParams } from "react-router-dom";
 // --------------------------------IMPT NOTE------------------------------------------
 //we have to think- the current user may be the author of this post and then 2 options
 //of edit and delete have to be shown to him/her.
+
+//-------------------------------2nd IMPT NOTE----------------------------------------
+//Right now, we are directly using blog.content, because of which html tags are also coming, but we
+//have to change this by using dangerouslyHTML and dom purify, a concept that I was once using in RTE. there
+//is no need of using this in rte but actually the place where content is being shown.
 const DisplayBlog = () => {
 
     const [blog, setBlog] = useState([])
@@ -53,12 +59,14 @@ const DisplayBlog = () => {
                    {blog.title}
                 </div>
 
-                <div className="browser-css">
-                   {blog.content}
-                 </div>
-            
-        </div>
-    ): null
+                 <div
+                    className="browser-css"
+                    dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(blog.content),
+                 }}
+                 ></div>
+         </div>
+  ) : null;
 
 
 }
