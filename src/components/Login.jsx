@@ -51,8 +51,8 @@ const Login = () => {
 
     return(
         
-         <div className="flex items-center justify-center min-h-screen bg-pink-50">
-        <div className="flex flex-col w-full max-w-md bg-white rounded-xl shadow-lg p-10 border-2 border-pink-500">
+         <div className="flex items-center justify-center min-h-screen bg-[#dad0d1]">
+        <div className="flex flex-col w-full max-w-md bg-white rounded-xl shadow-lg p-10 border-2 border-[#3a262d]">
            
             <div className="flex justify-center mb-6">
             <Logo width="100px" />
@@ -66,7 +66,7 @@ const Login = () => {
           Don&apos;t have an account?{" "}
           <Link
             to="/register"
-            className="text-pink-500 font-semibold hover:text-pink-400"
+            className="text-[#3a262d] font-semibold hover:text-[#7d5259]"
           >
             Sign up
           </Link>

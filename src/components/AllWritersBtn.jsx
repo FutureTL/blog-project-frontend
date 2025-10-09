@@ -4,7 +4,7 @@ import AllWriters from '../pages/AllWriters';
 const AllWritersBtn = () => {
 
     return(
-        <div className="py-8">
+        <div className="py-8 bg-[#dad0d1]">
             
                 <AllWriters/>
             

@@ -1,32 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-//card is going to be a clickable link.
-//what all to display on the card: avatar, username, description
+const WriterCard = ({ _id, username, fullname, description, avatar }) => {
+  const transformedImg = avatar
+    ? avatar.replace("/upload/", "/upload/w_80,h_80,c_thumb,g_face/")
+    : null;
 
-const WriterCard = ({_id, username, description, avatar}) => {
+  return (
+    <Link to={`/our-writers/${username}`}>
+      <div className="bg-[#3a262d] rounded-xl p-4 flex items-start hover:shadow-md transition-transform duration-300 hover:-translate-y-1 h-full max-h-40">
+        {/* Avatar */}
+        {transformedImg && (
+          <img
+            src={transformedImg}
+            alt={username}
+            className="w-20 h-20 rounded-full object-cover border border-gray-300 mr-4 flex-shrink-0"
+          />
+        )}
 
-   
-        
-    return(//this link needs to be corrected.
-       <Link to={`/our-writers/${username}`}> 
-
-            <div className="w-fu;; bg-gray-100 rounded-xl p-4">
-                <div className="w-full justify-center mb-4">
-                     <img src= { avatar } alt= {username} /> 
-                    {/* the alt or alternate text of image tag shows the text that will be displayed when the image file cannot be loaded. */}
-                </div>
-                <h2
-                className="text-xl font-bold"
-                > {username} </h2>
-                <h6
-                className="text-xl font-bold"
-                > {description} </h6>
-            </div>
-        
-        </Link>
-    )
-
-}
+        {/* Text */}
+        <div className="flex flex-col justify-between text-left overflow-hidden w-full">
+          <div className="truncate">
+            <h2 className="text-lg font-bold text-white">{fullname}</h2>
+            <h4 className="text-md font-bold text-gray-300">@{username}</h4>
+          </div>
+          <p className="text-sm text-gray-300 mt-2 line-clamp-3">{description}</p>
+        </div>
+      </div>
+    </Link>
+  );
+};
 
 export default WriterCard;

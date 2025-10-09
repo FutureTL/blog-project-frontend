@@ -72,13 +72,13 @@ const Header= () => {
         
                             if(item.active && item.name == 'AddPost'){
                                 return <Link to= {`${user?.username}/new-blog`}> 
-                                            <li className="text-pink-400 hover:text-pink-500 transition" key= {item.name}>
+                                            <li className="text-[#6a3c4a] hover:text-[#52192a] transition" key= {item.name}>
                                                 {item.name}
                                             </li>
                                         </Link> 
                             }else if(item.active){
                                 return     <Link to={item.slug}> 
-                                                <li className="text-pink-400 hover:text-pink-500 transition" key= {item.name}>
+                                                <li className="text-[#6a3c4a] hover:text-[#52192a] transition" key= {item.name}>
                                                     {item.name}
                                                 </li>
                                             </Link> 
@@ -87,7 +87,7 @@ const Header= () => {
                     })}
 
                     {user && 
-                        <li className="text-pink-400 hover:text-pink-500 transition">
+                        <li className="text-[#6a3c4a] hover:text-[#52192a] transition">
                             <LogoutBtn/>
                         </li>}
                         

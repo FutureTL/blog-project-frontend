@@ -9,9 +9,9 @@ const Button = ({
   return (
     <button
       type={type}
-      className={`px-4 py-2 rounded-lg border-2 border-pink-400 
-                  bg-white text-pink-400 font-medium transition-colors duration-200 
-                  hover:bg-pink-400 hover:text-white 
+      className={`px-4 py-2 rounded-lg border-2 border-[#5c3b42] 
+                  bg-white text-[#5c3b42] font-medium transition-colors duration-200 
+                  hover:bg-[#5c3b42] hover:text-white 
                   focus:outline-none focus:ring-2 focus:ring-pink-300
                   cursor-pointer
                   ${className}`}

@@ -107,43 +107,27 @@ const Signup = () => {
 
     <div className="min-h-screen flex">
       {/* Left Side - Branding / Illustration */}
-      <div className="hidden md:flex w-1/2 bg-gradient-to-br from-pink-300 via-pink-400 to-pink-600 items-center justify-center text-white p-10">
-        <div className="text-center max-w-md">
-          <Logo width="120px" />
-          <h1 className="text-4xl font-bold mb-4">Welcome to BlogApp</h1>
-          <p className="text-lg">
+      <div className="hidden md:flex w-1/2 bg-gradient-to-br from-[#3a262d] via-[#5c3b42] to-[#7d5259] items-center justify-center text-white p-10">
+        <div className="text-left max-w-md">
+          {/* <Logo width="120px" /> */}
+          <h1 className="text-4xl font-bold mb-4">Welcome to <span className="text-[#ff5468]">RITERS</span></h1>
+          <p className="text-lg text-[#dcc6c8]">
             Share your stories, connect with people, and explore ideas with ease.
           </p>
         </div>
       </div>
 
-        {/* <div className="flex items-center justify-center">
-            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-                <div className="mb-2 flex justify-center">
-                    <span className="inline-block w-full max-w-[100px]">
-                        <Logo width="100%" />
-                    </span>
-                </div>
-                <h2 className="text-center text-2xl font-bold leading-tight">Sign up to create account</h2>
-                <p className="mt-2 text-center text-base text-black/60">
-                    Already have an account &nbsp;
-                    <Link
-                        to="/login"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
-                    >
-                        Sign In
-                    </Link>
-                </p> */}
-                <div className="w-full md:w-1/2 flex items-center justify-center bg-gray-50 border-2 border-pink-500">
+   
+                <div className="w-full md:w-1/2 flex items-center justify-center bg-gray-50 border-2 border-[#5c3b42]">
                 <div className="w-full bg-white shadow-lg rounded-2xl p-8">
-                <h2 className="text-3xl font-bold text-pink-400 text-center">
+                <h2 className="text-3xl font-bold text-[#5c3b42] text-center">
                     Create an Account
                 </h2>
                 <p className="text-sm text-center mt-2">
                     <span className="text-gray-400">Already have an account?</span>{" "}
                     <Link
                         to="/login"
-                        className="text-pink-400 font-semibold hover:text-pink-300"
+                        className="text-[#3a262d] font-semibold hover:text-[#7d5259]"
                     >
                         Sign in
                     </Link>

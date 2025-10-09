@@ -55,11 +55,11 @@ const AllWriters = () => {
     return(
     <div className='w-full py-8'>
        
-            <div className='flex flex-wrap'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 md:px-16 py-10'>
             {
                 writers.map( (writer) => (
 
-                    <WriterCard key ={writer.fullname} {...writer}/>
+                    <WriterCard key ={writer._id} {...writer}/>
                     //we want to display cards for the writers that the user can click
                 ) )
             }

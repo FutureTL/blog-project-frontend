@@ -42,30 +42,40 @@ const DisplayBlog = () => {
 
         // const isAuthor =  
     
+    const imgOfAuthor = authorDetail?.avatar;
+    const transformedImg = imgOfAuthor?.replace('/upload/', '/upload/w_50,h_50,c_thumb,g_face/');
     
 
     return blog ? (
-        <div className="py-8">
-            
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
-                    {/* display image  */}
+        <div className="flex justify-center py-12 px-4">
+        <div className="max-w-3xl w-full">
+        {/* Author Name */}
+        
 
-                </div>
-                <div className="w-full mb-6">
-                   {authorDetail?.fullname}
-                </div>
+        {/* Blog Title */}
+        <h1 className="text-3xl font-bold mb-6 text-justify mx-auto">{blog.title}</h1>
 
-                <div className="w-full mb-6">
-                   {blog.title}
+         <div className="flex items-center mb-4">
+                <img
+                    src={transformedImg ? transformedImg : null}
+                    alt={authorDetail?.fullname}
+                    className="w-10 h-10 rounded-full object-cover mr-3 border border-gray-300"
+                />
+                <div className="text-gray-700 text-base font-medium">
+                    {authorDetail?.fullname}
                 </div>
+        </div>
 
-                 <div
-                    className="browser-css"
-                    dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(blog.content),
-                 }}
-                 ></div>
-         </div>
+        <br/>
+        {/* Blog Content */}
+        <div
+          className="prose prose-lg max-w-none text-justify mx-auto"
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(blog.content),
+          }}
+        ></div>
+      </div>
+    </div>
   ) : null;
 
 

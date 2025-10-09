@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import BlogCard from "../components/BlogCard";
+import Lottie from 'lottie-react';
+import FrontPageAnimate from './../lotties/frontPageLottie.json';
 
 //what is thinking- as soon as the home page loads,the user must be shown
 //all the posts(in which order or the preference for each user is not my concern right now).
@@ -55,38 +57,93 @@ const Home = () => {
     if (blogs.length > 0) {
 
        return(
-            <div className='w-full py-8'>
-                
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
-                    {
-                            blogs.map((blog)=>(
-                                <BlogCard key={blog._id} {...blog}/>
-                            // <BlogCard {...author} {...blog }/> 
-                            // rather than spreading both author and blog like this which can cause error if they contain same names like _id
-                            //so we use props
-                            // we are calling a blog card which will help us
-                            //with displaying the blog. 
+
+       <div className="min-h-screen flex flex-col items-center justify-center  bg-gradient-to-br from-[#d6b1b5] to-white">
+      
+          {/* Hero Section */}
+          <section className="w-full min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-12 md:px-16 py-12 bg-gradient-to-r from-[#d6b1b5] to-white">
+            {/* Left Text Section */}
+            <div className="flex-1 text-center md:text-left space-y-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-[#3a262d] leading-tight">
+                <span>
+                  Share your <span className="text-[#ff5468]">STORIES</span> &
+                </span>
+                <br />
+                <span>Be a part of someone else's</span>
+              </h1>
+
+              <button className="bg-[#ff5468] hover:bg-[#6a3c4a] text-white px-6 py-3 rounded-lg shadow-md transition duration-300">
+                Start Writing
+              </button>
+            </div>
+
+            {/* Right Animation Section */}
+            <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0">
+              <Lottie
+                animationData={FrontPageAnimate}
+                loop
+                className="w-64 md:w-90"
+              />
+            </div>
+      </section>
+
+      {/* horizontal line to  separate blogs */}
+      <hr className="w-full border-t-4 border-[#9a5a60] " />
+
+      {/* Blog Section */}
+      <section className="w-full px-6 md:px-16 py-4 bg-[#3a262d]">
+       <div className="max-w-5xl mx-auto px-4 py-12">
+                    <h1 className="text-2xl font-bold text-white mb-12">Latest Blogs</h1>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+                    {blogs.map((blog) => (
+                        <BlogCard key={blog._id} {...blog} />
                     ))}
                     </div>
-                
-            </div>
+           </div>
+      </section>
+    </div>
         )
     }
     
      return (
-            <div className="w-full py-8 mt-4 text-center">
-                
-                    <div className="flex flex-wrap">
-                        <div className="p-2 w-full">
-                            <h1 className="text-2xl font-bold hover:text-gray-500">
-                                No blogs on the platform right now. Write a BLOG for us!
-                            </h1>
-                        </div>
-                    </div>
-                
+            <div>
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-pink-100 to-pink-50 py-16">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8">
+          
+          {/* Text */}
+          <div className="flex-1 text-center md:text-left">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Share your STORIES &
+            </h1>
+            <p className="text-lg text-gray-600 mb-6">
+             Be part of someone else's
+            </p>
+            <button className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg shadow-md transition">
+              Start Reading
+            </button>
+          </div>
+
+          {/* Animation / Image */}
+          <div className="flex-1">
+            <Lottie animationData={FrontPageAnimate} loop={true} />
             </div>
-        )
+            <div> <h3>Write a blog for us today!</h3></div>
+        </div>
+      </div>
+    </div>
+)
     
 }
 
 export default Home;
+
+
+{/* <div className="max-w-5xl mx-auto px-4 py-12">
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-8">Latest Blogs</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    {blogs.map((blog) => (
+                        <BlogCard key={blog._id} {...blog} />
+                    ))}
+                    </div>
+            // </div> */}

@@ -44,6 +44,40 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
 
+
+.ql-editor img {
+  max-width: 300px;   /* limit image width (adjust as needed) */
+  width: 60%;        /* makes it responsive up to 400px */
+  height: auto;       /* keep aspect ratio */
+  display: block;     /* allows centering */
+  margin: 1rem auto;  /* center horizontally */
+  border-radius: 6px;/* optional: rounded corners */
+}
+
+.prose ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  margin-top:1rem;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  margin-left: 2rem;
+  margin-top:1rem;
+}
+
+.prose img {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
