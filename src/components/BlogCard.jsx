@@ -28,48 +28,49 @@ const BlogCard= ({_id, title, author, content, createdAt}) => {
     return(//this link needs to be corrected.
        <Link to={`/${author?.username}/${title}/${_id}`}> 
 
-            {/* <div className="bg-white shadow-md rounded-xl p-5 hover:shadow-lg transition-shadow duration-300 h-full flex flex-col justify-between"> */}
-             <div className=" w-[500px] h-[180px]
-                bg-[#dad0d1]
-                rounded-xl 
-                p-4 
-                flex
-                transition-all 
-                duration-300 
-                hover:shadow-md          
-                transition-all duration-300">
-                
-                
+            <div
+  className="w-full 
+  bg-[#dad0d1]
+  rounded-xl 
+  p-4 
+  flex flex-col sm:flex-row 
+  items-start sm:items-stretch
+  justify-between
+  gap-4
+  transition-all duration-300 
+  hover:shadow-lg 
+  h-full"
+>
+  {/* Left Content */}
+  <div className="flex flex-col justify-between flex-1 text-left">
+    <h2 className="text-base sm:text-lg font-bold text-gray-900 line-clamp-3 mb-3">
+      {title}
+    </h2>
 
-                 <div className="flex-1 flex-col justify-between">
-                 <h2 className="text-lg font-bold text-gray-900 line-clamp-3 text-left mb-2">
-                    {title}
-                </h2>
-                
-        
-                <div className="flex justify-between  text-sm text-gray-700 mt-16">
-                    <span>{author?.fullname}</span>
-                    <span>
-                            {new Date(createdAt).toLocaleDateString("en-US", {
-                                day: "numeric",
-                                month: "short",
-                            })}
-                    </span>
-                </div>
-               
-            </div>
+    <div className="flex justify-between text-sm text-gray-700 mt-auto">
+      <span>{author?.fullname}</span>
+      <span>
+        {new Date(createdAt).toLocaleDateString("en-US", {
+          day: "numeric",
+          month: "short",
+        })}
+      </span>
+    </div>
+  </div>
 
-             {blogImage && (
-                    <div className="w-[160px] h-[100px] flex-shrink-0 flex items-center justify-center">
-                        <img 
-                            src={blogImage} 
-                            alt={title} 
-                            className="w-full h-full rounded-lg" 
-                        />
-                    </div>
-             )}
+  {/* Right Image */}
+  {blogImage && (
+    <div className="w-full sm:w-[140px] md:w-[160px] h-[160px] sm:h-[120px] flex-shrink-0 flex items-center justify-center">
+      <img
+        src={blogImage}
+        alt={title}
+        className="w-full h-full object-cover rounded-lg"
+      />
+    </div>
+  )}
+</div>
 
-            </div>
+
         
         </Link>
     )

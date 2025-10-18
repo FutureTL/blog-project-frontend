@@ -61,10 +61,10 @@ const Home = () => {
        <div className="min-h-screen flex flex-col items-center justify-center  bg-gradient-to-br from-[#d6b1b5] to-white">
       
           {/* Hero Section */}
-          <section className="w-full min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-12 md:px-16 py-12 bg-gradient-to-r from-[#d6b1b5] to-white">
+          <section className="w-full flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 md:px-16 py-12 md:pt-20 bg-gradient-to-r from-[#d6b1b5] to-white">
             {/* Left Text Section */}
-            <div className="flex-1 text-center md:text-left space-y-6">
-              <h1 className="text-4xl md:text-5xl font-bold text-[#3a262d] leading-tight">
+            <div className="flex-1 text-center md:text-left space-y-6 md:space-y-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#3a262d] leading-tight">
                 <span>
                   Share your <span className="text-[#ff5468]">STORIES</span> &
                 </span>
@@ -78,23 +78,23 @@ const Home = () => {
             </div>
 
             {/* Right Animation Section */}
-            <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0">
+            <div className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0 w-full">
               <Lottie
                 animationData={FrontPageAnimate}
                 loop
-                className="w-64 md:w-90"
+                className="w-64sm:w-80 md:w-[380px] lg:w-[420px]"
               />
             </div>
       </section>
 
       {/* horizontal line to  separate blogs */}
-      <hr className="w-full border-t-4 border-[#9a5a60] " />
+      <hr className="w-full border-t-2 sm:border-t-4 border-[#9a5a60] " />
 
       {/* Blog Section */}
-      <section className="w-full px-6 md:px-16 py-4 bg-[#3a262d]">
-       <div className="max-w-5xl mx-auto px-4 py-12">
-                    <h1 className="text-2xl font-bold text-white mb-12">Latest Blogs</h1>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+      <section className="w-full px-4 sm:px-8 md:px-16 py-8 bg-[#3a262d]">
+       <div className="max-w-6xl mx-auto">
+                    <h1 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-12 text-center md:text-left">Latest Blogs</h1>
+                    <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
                     {blogs.map((blog) => (
                         <BlogCard key={blog._id} {...blog} />
                     ))}
@@ -112,17 +112,19 @@ const Home = () => {
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8">
           
           {/* Text */}
-          <div className="flex-1 text-center md:text-left">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              Share your STORIES &
-            </h1>
-            <p className="text-lg text-gray-600 mb-6">
-             Be part of someone else's
-            </p>
-            <button className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg shadow-md transition">
-              Start Reading
-            </button>
-          </div>
+            <div className="flex-1 text-center md:text-left space-y-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-[#3a262d] leading-tight">
+                <span>
+                  Share your <span className="text-[#ff5468]">STORIES</span> &
+                </span>
+                <br />
+                <span>Be a part of someone else's</span>
+              </h1>
+
+              <button className="bg-[#ff5468] hover:bg-[#6a3c4a] text-white px-6 py-3 rounded-lg shadow-md transition duration-300">
+                Start Writing
+              </button>
+            </div>
 
           {/* Animation / Image */}
           <div className="flex-1">
